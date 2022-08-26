@@ -26,6 +26,7 @@ class Images(models.Model):
     imgHash = models.CharField(max_length=255)
     imgId = models.CharField(max_length=255)
     
+    
 class Faces(models.Model):
     
     imgId = models.CharField(max_length=255)
