@@ -5,20 +5,17 @@ from django.db import models
 class Customer(models.Model):
     
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
-    name = models.CharField(max_length=255)
     company = models.CharField(max_length=255, null=True)
     isActive = models.BooleanField(default=True)
     
     def __str__(self):
         
-        return self.name
-    
+        return self.user.get_full_name()
 
 class Event(models.Model):
     
     name = models.CharField(max_length=255)
     customer_id = models.ForeignKey(Customer, on_delete=models.CASCADE)
-
 
 class Image(models.Model):
     
@@ -28,7 +25,6 @@ class Image(models.Model):
     isIndexed = models.BooleanField(default=False)
     imgHash = models.CharField(max_length=255)
     imgId = models.CharField(max_length=255)
-    
     
 class Face(models.Model):
     
