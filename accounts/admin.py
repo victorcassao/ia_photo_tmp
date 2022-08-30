@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import Customer, Event, Images, Faces
+from .models import Customer, Event, Image, Face
 
 # Register your models here.
-admin.register(Customer)
-admin.register(Event)
-admin.register(Images)
-admin.register(Faces)
+admin.site.register(Customer)
+admin.site.register(Event)
+admin.site.register(Image)
+admin.site.register(Face)

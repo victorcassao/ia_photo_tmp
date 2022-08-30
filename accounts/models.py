@@ -6,6 +6,7 @@ class Customer(models.Model):
     
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     name = models.CharField(max_length=255)
+    company = models.CharField(max_length=255, null=True)
     isActive = models.BooleanField(default=True)
     
     def __str__(self):
@@ -19,7 +20,7 @@ class Event(models.Model):
     customer_id = models.ForeignKey(Customer, on_delete=models.CASCADE)
 
 
-class Images(models.Model):
+class Image(models.Model):
     
     filename = models.CharField(max_length=255)
     event_id = models.ForeignKey(Event, on_delete=models.CASCADE)
@@ -29,7 +30,7 @@ class Images(models.Model):
     imgId = models.CharField(max_length=255)
     
     
-class Faces(models.Model):
+class Face(models.Model):
     
     imgId = models.CharField(max_length=255)
     faceId = models.CharField(max_length=255)
