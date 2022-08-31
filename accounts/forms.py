@@ -6,7 +6,7 @@ from django.forms.fields import ChoiceField
 from django.forms.widgets import Widget
 from django.core.exceptions import ValidationError
 from django.contrib.auth.models import User
-from .models import Customer, Event, Image, Face
+from .models import Customer
 
 class CreateNewCustomer(forms.Form):
     

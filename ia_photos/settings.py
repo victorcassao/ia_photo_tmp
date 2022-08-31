@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts',
+    'events',
     'crispy_forms',
     'crispy_bootstrap5'
 ]
@@ -57,7 +58,7 @@ ROOT_URLCONF = 'ia_photos.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates', BASE_DIR / 'accounts/templates'],
+        'DIRS': [BASE_DIR / 'templates', BASE_DIR / 'accounts/templates', BASE_DIR / 'events/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
