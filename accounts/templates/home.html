@@ -8,6 +8,8 @@
 
         <h1>Hi {{ user.username }}!</h1>
 
+        <a href="{% url 'newEvent' %}">Novo Evento</a>
+
     {% else %}
 
         <p>You are not logged in</p>
