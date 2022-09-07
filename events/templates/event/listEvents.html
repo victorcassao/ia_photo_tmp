@@ -3,12 +3,28 @@
 {% block content %}
 <a href="{% url 'newEvent' %}">Novo Evento</a>
 <h1>Events</h1>
-<ul>
-{% for event in event_list %}
-    <li>{{ event.name }} - {{ event.instituicao }}</li>
-{% empty %}
-    <li>No events yet.</li>
-{% endfor %}
-</ul>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Evento</th>
+            <th>Insituição</th>
+            <th>Usuário</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for event in event_list %}
+        <tr>
+            <td>{{ event.name }}</td>
+            <td>{{ event.instituicao }}</td>
+            <td>{{ event.user }}</td>
+            <td>
+                <a href="{% url 'detalhe_evento' event.id %}">Go</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 
 {% endblock content %}
